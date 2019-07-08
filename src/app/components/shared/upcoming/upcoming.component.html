@@ -1,7 +1,10 @@
 <!-- Card -->
 <div
   class="card card-image mb-3"
-  style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);"
+  [ngStyle]="{
+    background:
+      'url(' + imagePath + movie.backdrop_path + ') no-repeat center center'
+  }"
 >
   <!-- Content -->
   <div
@@ -14,8 +17,8 @@
       <p>
         {{ movie.overview }}
       </p>
-      <a mdbBtn color="blue" class="waves-light" mdbWavesEffect
-        ><i class="far fa-clone left"></i> View movie</a
+      <a [href]="'/movies/' + movie.id" class="stretched-link text-primary"
+        >Read more</a
       >
     </div>
   </div>
