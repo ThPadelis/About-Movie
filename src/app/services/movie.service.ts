@@ -28,4 +28,8 @@ export class MovieService {
   getLatest(): Observable<any> {
     return this.http.get(this.baseUrl + Endpoints.latest, this.params);
   }
+
+  getTrending(): Observable<any> {
+    return this.http.get(this.baseUrl + Endpoints.trendingMovie, this.params);
+  }
 }

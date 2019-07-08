@@ -10,21 +10,25 @@ import { Movie } from "src/app/models/movie";
 })
 export class MoviesComponent implements OnInit {
   public movies: Movie[];
+  public trending: Movie[];
   public upcoming: Movie;
   constructor(
     private movieService: MovieService,
     private ngxService: NgxUiLoaderService
   ) {}
 
-  async ngOnInit() {
+  ngOnInit() {
     this.ngxService.start();
-    await this.movieService
-      .getPopular()
-      .subscribe(m => (this.movies = m.results));
 
-    await this.movieService
+    this.movieService.getPopular().subscribe(m => (this.movies = m.results));
+
+    this.movieService
       .getUpcoming()
       .subscribe(m => (this.upcoming = m.results[this.randomInt(0, 20)]));
+
+    this.movieService
+      .getTrending()
+      .subscribe(m => (this.trending = m.results.slice(0, 4)));
 
     this.ngxService.stop();
   }

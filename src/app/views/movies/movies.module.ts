@@ -6,6 +6,7 @@ import { MovieCardModule } from "src/app/components/shared/movie-card/movie-card
 import { FormsModule } from "@angular/forms";
 import { HeaderModule } from "src/app/components/shared/header/header.module";
 import { UpcomingModule } from "src/app/components/shared/upcoming/upcoming.module";
+import { MovieCarouselModule } from "src/app/components/shared/movie-carousel/movie-carousel.module";
 
 @NgModule({
   declarations: [MoviesComponent],
@@ -15,7 +16,8 @@ import { UpcomingModule } from "src/app/components/shared/upcoming/upcoming.modu
     CommonModule,
     FormsModule,
     HeaderModule,
-    UpcomingModule
+    UpcomingModule,
+    MovieCarouselModule
   ],
   exports: [MoviesComponent]
 })

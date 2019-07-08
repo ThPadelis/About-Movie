@@ -8,7 +8,7 @@ import { Movie } from "src/app/models/movie";
 })
 export class MovieCardComponent implements OnInit {
   @Input() movie: Movie;
-  private imagePath = "https://image.tmdb.org/t/p/w500";
+  public imagePath = "https://image.tmdb.org/t/p/w500";
   constructor() {}
 
   ngOnInit() {}
