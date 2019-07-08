@@ -1,13 +1,28 @@
 <app-navbar></app-navbar>
 
 <main>
+  <!-- Movies -->
   <section class="container">
+    <!-- Header -->
+    <app-header [title]="'watch movies online'"></app-header>
     <div class="row">
       <div
         class="col-sm-12 col-md-6 col-lg-3 col-xl-3 d-flex align-items-stretch"
         *ngFor="let movie of movies"
       >
         <app-movie-card [movie]="movie"></app-movie-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest movie -->
+  <section class="container">
+    <!-- Header -->
+    <app-header [title]="'comming soon'"></app-header>
+
+    <div class="row" *ngIf="upcoming">
+      <div class="col-sm-12">
+        <app-upcoming [movie]="upcoming"></app-upcoming>
       </div>
     </div>
   </section>

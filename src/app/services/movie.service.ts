@@ -24,4 +24,8 @@ export class MovieService {
   getUpcoming(): Observable<any> {
     return this.http.get(this.baseUrl + Endpoints.upcoming, this.params);
   }
+
+  getLatest(): Observable<any> {
+    return this.http.get(this.baseUrl + Endpoints.latest, this.params);
+  }
 }

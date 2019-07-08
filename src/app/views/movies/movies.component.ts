@@ -10,14 +10,26 @@ import { Movie } from "src/app/models/movie";
 })
 export class MoviesComponent implements OnInit {
   public movies: Movie[];
+  public upcoming: Movie;
   constructor(
     private movieService: MovieService,
     private ngxService: NgxUiLoaderService
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.ngxService.start();
-    this.movieService.getPopular().subscribe(m => (this.movies = m.results));
+    await this.movieService
+      .getPopular()
+      .subscribe(m => (this.movies = m.results));
+
+    await this.movieService
+      .getUpcoming()
+      .subscribe(m => (this.upcoming = m.results[this.randomInt(0, 20)]));
+
     this.ngxService.stop();
+  }
+
+  randomInt(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min) + min);
   }
 }

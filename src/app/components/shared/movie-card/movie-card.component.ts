@@ -11,7 +11,5 @@ export class MovieCardComponent implements OnInit {
   private imagePath = "https://image.tmdb.org/t/p/w500";
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.movie);
-  }
+  ngOnInit() {}
 }
