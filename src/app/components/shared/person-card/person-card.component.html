@@ -1,0 +1,18 @@
+<div class="view overlay zoom mb-3 rounded z-depth-1">
+  <img
+    [src]="person.profile_path ? imagePath : '../../../../assets/actor.jpg'"
+    class="img-fluid"
+    [alt]="person.name"
+  />
+  <div class="mask flex-center waves-effect waves-light rgba-black-strong">
+    <a
+      [href]="'/persons/' + person.id"
+      class="white-text stretched-link text-center"
+      >{{ person.name }}
+      <span class="d-block" *ngIf="person.job">{{ person.job }}</span>
+      <span class="d-block" *ngIf="person.character">{{
+        person.character
+      }}</span>
+    </a>
+  </div>
+</div>

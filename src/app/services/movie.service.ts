@@ -44,4 +44,8 @@ export class MovieService {
   getImages(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/movie/${id}/images`, this.params);
   }
+
+  getCredits(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/movie/${id}/credits`, this.params);
+  }
 }
