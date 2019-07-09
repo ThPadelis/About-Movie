@@ -1,0 +1,8 @@
+<p class="d-inline-block" [mdbTooltip]="rating" placement="top">
+  <mdb-icon
+    [ngClass]="{ 'text-warning': i < rating }"
+    fas
+    icon="star"
+    *ngFor="let i of 10 | numArray"
+  ></mdb-icon>
+</p>

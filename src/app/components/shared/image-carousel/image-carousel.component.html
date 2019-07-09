@@ -1,0 +1,5 @@
+<mdb-carousel [animation]="'slide'" [interval]="3000">
+  <mdb-carousel-item *ngFor="let image of images">
+    <img class="d-block w-100" [src]="imagePath + image.file_path" />
+  </mdb-carousel-item>
+</mdb-carousel>

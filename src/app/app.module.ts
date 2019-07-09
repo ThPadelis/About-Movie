@@ -7,6 +7,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { MoviesModule } from "./views/movies/movies.module";
 import { HttpClientModule } from "@angular/common/http";
+import { MovieModule } from "./views/movie/movie.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +17,8 @@ import { HttpClientModule } from "@angular/common/http";
     NgxUiLoaderModule.forRoot({ fgsType: SPINNER.foldingCube }),
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
-    MoviesModule
+    MoviesModule,
+    MovieModule
   ],
   providers: [],
   bootstrap: [AppComponent],

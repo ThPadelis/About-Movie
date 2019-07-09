@@ -32,4 +32,16 @@ export class MovieService {
   getTrending(): Observable<any> {
     return this.http.get(this.baseUrl + Endpoints.trendingMovie, this.params);
   }
+
+  getMovie(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/movie/${id}`, this.params);
+  }
+
+  getVideos(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/movie/${id}/videos`, this.params);
+  }
+
+  getImages(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/movie/${id}/images`, this.params);
+  }
 }

@@ -1,0 +1,77 @@
+<app-navbar></app-navbar>
+
+<main *ngIf="movie">
+  <!-- Gallery -->
+  <section class="py-0">
+    <app-image-carousel [images]="backdrops"></app-image-carousel>
+  </section>
+
+  <!-- Info & Trailer -->
+  <section class="container">
+    <!-- Header -->
+    <app-header [title]="movie.title"></app-header>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <img
+              [src]="imagePath + movie.poster_path"
+              [alt]="movie.title"
+              class="d-block w-100 mb-3"
+            />
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <app-rating [rating]="movie.vote_average"></app-rating>
+
+            <!-- Genre -->
+            <p class="font-weight-bold mb-1">
+              Genre:
+              <span class="font-weight-normal">{{ movie.genres[0].name }}</span>
+            </p>
+            <!-- Release date -->
+            <p class="font-weight-bold mb-1">
+              Release date:
+              <span class="font-weight-normal">{{
+                movie.release_date | date: shortDate
+              }}</span>
+            </p>
+            <!-- Running time -->
+            <p class="font-weight-bold mb-1">
+              Running time:
+              <span class="font-weight-normal">{{ movie.runtime }} mins</span>
+            </p>
+            <!-- Country -->
+            <p class="font-weight-bold mb-1">
+              Country:
+              <span class="font-weight-normal">{{
+                movie.production_countries[0].iso_3166_1
+              }}</span>
+            </p>
+            <!-- Overview -->
+            <p>{{ movie.overview }}</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-sm-12 col-md-12 col-lg-6 col-xl-6 d-flex align-items-stretch"
+      >
+        <!-- YouTube trailer -->
+        <iframe
+          *ngIf="videos"
+          id="ytplayer"
+          type="text/html"
+          class="d-block w-100 h-100"
+          [src]="videoUrl"
+          frameborder="0"
+        ></iframe>
+        <!-- <pre>{{ videos | json }}</!-->
+      </div>
+    </div>
+  </section>
+
+  <!-- Actor cast -->
+  <section class="container">
+    <app-header [title]="'actor cast'"></app-header>
+  </section>
+</main>
