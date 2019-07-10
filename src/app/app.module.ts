@@ -8,6 +8,7 @@ import { AppComponent } from "./app.component";
 import { MoviesModule } from "./views/movies/movies.module";
 import { HttpClientModule } from "@angular/common/http";
 import { MovieModule } from "./views/movie/movie.module";
+import { PersonModule } from "./views/person/person.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,8 @@ import { MovieModule } from "./views/movie/movie.module";
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
     MoviesModule,
-    MovieModule
+    MovieModule,
+    PersonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

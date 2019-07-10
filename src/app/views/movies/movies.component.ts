@@ -17,16 +17,18 @@ export class MoviesComponent implements OnInit {
     private ngxService: NgxUiLoaderService
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.ngxService.start();
 
-    this.movieService.getPopular().subscribe(m => (this.movies = m.results));
+    await this.movieService
+      .getPopular()
+      .subscribe(m => (this.movies = m.results));
 
-    this.movieService
+    await this.movieService
       .getUpcoming()
       .subscribe(m => (this.upcoming = m.results[this.randomInt(0, 20)]));
 
-    this.movieService
+    await this.movieService
       .getTrending()
       .subscribe(m => (this.trending = m.results.slice(0, 4)));
 

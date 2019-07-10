@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+<main *ngIf="person">
+  <!-- Info -->
+  <section class="container">
+    <app-header [title]="person.name"></app-header>
+
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+        <app-person-card [person]="person"></app-person-card>
+      </div>
+      <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7">
+        <p>{{ person.biography }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 offset-md-1 ">
+        <!-- Birthday -->
+        <p class="font-weight-bold">
+          Born:
+          <span class="font-weight-normal">{{
+            person.birthday | date: shortDate
+          }}</span>
+          in
+          <span class="font-weight-normal">{{ person.place_of_birth }}</span>
+        </p>
+        <!-- Deathday -->
+        <p *ngIf="person.deathday">
+          Died:
+          <span class="font-weight-normal">{{
+            person.deathday | date: shortDate
+          }}</span>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>

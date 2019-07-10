@@ -30,14 +30,14 @@ export class MovieComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.ngxService.start();
 
-    this.movieService
+    await this.movieService
       .getMovie(Number(this.router.snapshot.paramMap.get("id")))
       .subscribe(m => (this.movie = m));
 
-    this.movieService
+    await this.movieService
       .getVideos(Number(this.router.snapshot.paramMap.get("id")))
       .subscribe(v => {
         this.videos = v.results;
@@ -46,14 +46,14 @@ export class MovieComponent implements OnInit {
         );
       });
 
-    this.movieService
+    await this.movieService
       .getImages(Number(this.router.snapshot.paramMap.get("id")))
       .subscribe(images => {
         this.backdrops = images.backdrops;
         this.posters = images.posters;
       });
 
-    this.movieService
+    await this.movieService
       .getCredits(Number(this.router.snapshot.paramMap.get("id")))
       .subscribe(p => {
         this.cast = p.cast;
