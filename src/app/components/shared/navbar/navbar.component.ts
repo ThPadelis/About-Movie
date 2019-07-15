@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { Genre } from "src/app/models/genre";
+import { MovieService } from "src/app/services/movie.service";
 
 @Component({
   selector: "app-navbar",
@@ -6,7 +8,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  public genres: Genre[];
+  constructor(private movieService: MovieService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.movieService.getGenres().subscribe(g => (this.genres = g.genres));
+  }
 }

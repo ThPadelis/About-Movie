@@ -25,7 +25,7 @@
           <span class="font-weight-normal">{{ person.place_of_birth }}</span>
         </p>
         <!-- Deathday -->
-        <p *ngIf="person.deathday">
+        <p class="font-weight-bold" *ngIf="person.deathday">
           Died:
           <span class="font-weight-normal">{{
             person.deathday | date: shortDate

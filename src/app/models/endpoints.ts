@@ -3,5 +3,6 @@ export const Endpoints = {
   topRated: "/movie/top_rated",
   upcoming: "/movie/upcoming",
   latest: "/movie/latest",
-  trendingMovie: "/trending/movie/day"
+  trendingMovie: "/trending/movie/day",
+  genresMovie: "/genre/movie/list"
 };

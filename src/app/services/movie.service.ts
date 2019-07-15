@@ -33,6 +33,10 @@ export class MovieService {
     return this.http.get(this.baseUrl + Endpoints.trendingMovie, this.params);
   }
 
+  getGenres(): Observable<any> {
+    return this.http.get(this.baseUrl + Endpoints.genresMovie, this.params);
+  }
+
   getMovie(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/movie/${id}`, this.params);
   }
