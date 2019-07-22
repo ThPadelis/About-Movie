@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgxUiLoaderService } from "ngx-ui-loader";
 import { MovieService } from "src/app/services/movie.service";
 import { Movie } from "src/app/models/movie";
+import { SeoService } from "src/app/services/seo.service";
 
 @Component({
   selector: "app-movies",
@@ -14,10 +15,14 @@ export class MoviesComponent implements OnInit {
   public upcoming: Movie;
   constructor(
     private movieService: MovieService,
-    private ngxService: NgxUiLoaderService
+    private ngxService: NgxUiLoaderService,
+    private seoService: SeoService
   ) {}
 
   async ngOnInit() {
+    this.seoService.setTitle("Home");
+    this.seoService.addMetaTags();
+
     this.ngxService.start();
 
     await this.movieService

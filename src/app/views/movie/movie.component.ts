@@ -7,6 +7,7 @@ import { Video } from "src/app/models/Video";
 import { Image } from "src/app/models/Image";
 import { DomSanitizer } from "@angular/platform-browser";
 import { Person } from "src/app/models/person";
+import { SeoService } from "src/app/services/seo.service";
 
 @Component({
   selector: "app-movie",
@@ -27,7 +28,8 @@ export class MovieComponent implements OnInit {
     private movieService: MovieService,
     private ngxService: NgxUiLoaderService,
     private router: ActivatedRoute,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private seoService: SeoService
   ) {}
 
   async ngOnInit() {
@@ -35,7 +37,10 @@ export class MovieComponent implements OnInit {
 
     await this.movieService
       .getMovie(Number(this.router.snapshot.paramMap.get("id")))
-      .subscribe(m => (this.movie = m));
+      .subscribe(m => {
+        this.movie = m;
+        this.seoService.setTitle(m.title);
+      });
 
     await this.movieService
       .getVideos(Number(this.router.snapshot.paramMap.get("id")))
