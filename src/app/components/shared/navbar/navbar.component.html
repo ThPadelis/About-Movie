@@ -1,15 +1,15 @@
 <mdb-navbar
-  SideClass="navbar navbar-expand-lg navbar-dark blue-gradient sticky-top scrolling-navbar"
+  SideClass="navbar navbar-expand-lg navbar-dark bg-dark sticky-top scrolling-navbar"
   [containerInside]="false"
 >
   <mdb-navbar-brand
-    ><a class="navbar-brand" href="/">
+    ><a class="navbar-brand" href="/About-Movie/">
       AboutMovie
     </a>
   </mdb-navbar-brand>
 
   <links>
-    <ul class="navbar-nav mr-auto">
+    <!-- <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown" dropdown>
         <a
           dropdownToggle
@@ -29,7 +29,7 @@
             class="dropdown-item waves-light"
             mdbWavesEffect
             *ngFor="let g of genres"
-            [href]="'/movies/categories/' + g.id"
+            [href]="'movies/categories/' + g.id"
             >{{ g.name }}</a
           >
         </div>
@@ -58,7 +58,7 @@
           >Upcoming</a
         >
       </li>
-    </ul>
+    </ul> -->
 
     <ul class="navbar-nav ml-auto nav-flex-icons">
       <li class="nav-item">

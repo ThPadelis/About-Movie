@@ -4,7 +4,7 @@
       [src]="imagePath + movie.poster_path"
       [alt]="movie.title"
     ></mdb-card-img>
-    <a [href]="'/movies/' + movie.id">
+    <a [href]="'movies/' + movie.id">
       <div class="mask"></div>
     </a>
   </div>
@@ -19,6 +19,6 @@
       {{ movie.overview | truncate: 75 }}
     </mdb-card-text>
 
-    <a [href]="'/movies/' + movie.id" color="stretched-link">Read more</a>
+    <a [href]="'movies/' + movie.id" color="stretched-link">Read more</a>
   </mdb-card-body>
 </mdb-card>

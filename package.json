@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --deploy-url /About-Movie --serve-path /About-Movie/",
     "build": "ng build --prod --output-path docs --base-href /About-Movie/",
     "test": "ng test",
     "lint": "ng lint",
