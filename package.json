@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --deploy-url /About-Movie --serve-path /About-Movie/",
-    "build": "ng build --prod --output-path docs --base-href /About-Movie/",
+    "start": "ng serve",
+    "build": "ng build --prod --aot --base-href /About-Movie/",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "sh deploy.sh"
   },
   "private": true,
   "dependencies": {
