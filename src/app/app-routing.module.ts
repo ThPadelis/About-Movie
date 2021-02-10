@@ -1,26 +1,26 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { MoviesComponent } from "./views/movies/movies.component";
-import { MovieComponent } from "./views/movie/movie.component";
-import { PersonComponent } from "./views/person/person.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: MoviesComponent
+    loadChildren: () =>
+      import("./views/movies/movies.module").then((m) => m.MoviesModule),
   },
   {
     path: "movies/:id",
-    component: MovieComponent
+    loadChildren: () =>
+      import("./views/movie/movie.module").then((m) => m.MovieModule),
   },
   {
     path: "persons/:id",
-    component: PersonComponent
-  }
+    loadChildren: () =>
+      import("./views/person/person.module").then((m) => m.PersonModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -6,9 +6,10 @@ import {
   WavesModule,
   ButtonsModule,
   IconsModule,
-  DropdownModule
+  DropdownModule,
 } from "angular-bootstrap-md";
 import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [NavbarComponent],
@@ -18,8 +19,9 @@ import { CommonModule } from "@angular/common";
     ButtonsModule,
     IconsModule,
     DropdownModule,
-    CommonModule
+    CommonModule,
+    RouterModule,
   ],
-  exports: [NavbarComponent]
+  exports: [NavbarComponent],
 })
 export class NavigationModule {}

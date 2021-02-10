@@ -4,10 +4,11 @@ import {
   ButtonsModule,
   WavesModule,
   CardsFreeModule,
-  IconsModule
+  IconsModule,
 } from "angular-bootstrap-md";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [UpcomingComponent],
@@ -17,8 +18,9 @@ import { FormsModule } from "@angular/forms";
     CardsFreeModule,
     IconsModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
   ],
-  exports: [UpcomingComponent]
+  exports: [UpcomingComponent],
 })
 export class UpcomingModule {}

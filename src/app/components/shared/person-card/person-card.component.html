@@ -6,7 +6,7 @@
   />
   <div class="mask flex-center waves-effect waves-light rgba-black-strong">
     <a
-      [href]="'persons/' + person.id"
+      [routerLink]="'/persons/' + person.id"
       class="white-text stretched-link text-center"
       >{{ person.name }}
       <span class="d-block" *ngIf="person.job">{{ person.job }}</span>

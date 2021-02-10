@@ -4,9 +4,10 @@ import {
   ButtonsModule,
   WavesModule,
   CardsFreeModule,
-  IconsModule
+  IconsModule,
 } from "angular-bootstrap-md";
 import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [PersonCardComponent],
@@ -15,8 +16,9 @@ import { CommonModule } from "@angular/common";
     WavesModule,
     CardsFreeModule,
     IconsModule,
-    CommonModule
+    CommonModule,
+    RouterModule,
   ],
-  exports: [PersonCardComponent]
+  exports: [PersonCardComponent],
 })
 export class PersonCardModule {}

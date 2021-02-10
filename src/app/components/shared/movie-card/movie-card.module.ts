@@ -4,9 +4,10 @@ import {
   ButtonsModule,
   WavesModule,
   CardsFreeModule,
-  TooltipModule
+  TooltipModule,
 } from "angular-bootstrap-md";
 import { PipesModule } from "src/app/pipes/pipes.module";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [MovieCardComponent],
@@ -15,8 +16,9 @@ import { PipesModule } from "src/app/pipes/pipes.module";
     WavesModule,
     CardsFreeModule,
     TooltipModule,
-    PipesModule
+    PipesModule,
+    RouterModule,
   ],
-  exports: [MovieCardComponent]
+  exports: [MovieCardComponent],
 })
 export class MovieCardModule {}
